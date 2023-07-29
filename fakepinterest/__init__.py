@@ -6,7 +6,9 @@ import os
 
 app = Flask(__name__)
 
+#os.getenv('BD_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('BD_URL')
+    #'postgresql://postgres:postgres@localhost/comunidade'
 app.config['SECRET_KEY'] = "1813961736aa7f54661564ca5a8f06a6"
 app.config['UPLOAD_FOLDER'] = "static/fotos_posts"
 
