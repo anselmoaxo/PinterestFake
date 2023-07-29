@@ -11,8 +11,8 @@ from email.mime.multipart import MIMEMultipart
 
 
 # Defina suas configurações de e-mail aqui
-EMAIL_ADDRESS = 'aoliveira@cstecnologia.com.br'
-EMAIL_PASSWORD = 'gjjxvptgxfpgosia'
+EMAIL_ADDRESS = ''
+EMAIL_PASSWORD = ''
 
 # Função para enviar e-mail
 def enviar_email(destinatario, assunto, corpo):
@@ -61,9 +61,9 @@ def criarconta():
                           senha= senha)
         db.session.add(usuario)
         db.session.commit()
-        assunto = 'Bem-vindo à nossa aplicação!'
-        corpo = f'Olá {form_criar_conta.nome.data},\n\nSua conta foi criada com sucesso!\n\nBem-vindo!\n\nEquipe da nossa aplicação'
-        enviar_email(form_criar_conta.email.data, assunto, corpo)
+        #assunto = 'Bem-vindo à nossa aplicação!'
+        #corpo = f'Olá {form_criar_conta.nome.data},\n\nSua conta foi criada com sucesso!\n\nBem-vindo!\n\nEquipe da nossa aplicação'
+        #enviar_email(form_criar_conta.email.data, assunto, corpo)
 
         login_user(usuario, remember=True)
         return redirect(url_for("perfil", id_usuario= usuario.id))
